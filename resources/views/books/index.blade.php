@@ -1,28 +1,23 @@
 <x-app-layout>
-    
-    <div>
-        <table class="w-full text-sm text-left text-gray-500">
-            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-            <tr>
-                <th scope="col" class="px-4 py-3">Title</th>
-                <th scope="col" class="px-4 py-3">Author</th>
-                <th scope="col" class="px-4 py-3">genre</th>
-                <th scope="col" class="px-4 py-3">Isbn</th>
-                <th scope="col" class="px-4 py-3">Published year</th>
-            </tr>
-            </thead>
+    <!-- Section Title -->
+    <div class="text-center my-8">
+        <h2 class="text-3xl font-semibold text-gray-900">All Available Books</h2>
+        <p class="text-lg text-gray-600">Browse through our collection of books.</p>
+    </div>
 
-            <tbody>
-            @foreach($books as $book)
-                <tr class="border-b">
-                    <th scope="row" class="px-4 py-3 font-semibold text-gray-900 whitespace-nowrap">{{ $book->title }}</th>
-                    <td class="px-4 py-3">{{ $book->author}}</td>
-                    <td class="px-4 py-3">{{ $book->genre->name }}</td>
-                    <td class="px-4 py-3">{{ $book->isbn }}</td>
-                    <td class="px-4 py-3">{{ $book->publication_year }}</td>
-                </tr>
-            @endforeach
-            </tbody>
-        </table>     
+    <!-- Book Grid -->
+    <div class="max-w-7xl mx-auto px-6 py-6 grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+        @foreach($books as $book)
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                <h3 class="text-lg font-semibold text-green-700 text-center mb-4">{{ $book->title }}</h3>
+                
+                <div class="space-y-2">
+                    <p class="text-gray-600"><strong>Author:</strong> {{ $book->author }}</p>
+                    <p class="text-gray-600"><strong>Genre:</strong> {{ $book->genre_id }}</p>
+                    <p class="text-gray-600"><strong>ISBN:</strong> {{ $book->isbn }}</p>
+                    <p class="text-gray-600"><strong>Year:</strong> {{ $book->publication_year }}</p>
+                </div>
+            </div>
+        @endforeach
     </div>
 </x-app-layout>
