@@ -17,7 +17,7 @@
                 <tr class="border-b">
                     <th scope="row" class="px-4 py-3 font-semibold text-gray-900 whitespace-nowrap">{{ $book->title }}</th>
                     <td class="px-4 py-3">{{ $book->author}}</td>
-                    <td class="px-4 py-3">{{ $book->genre_id }}</td>
+                    <td class="px-4 py-3">{{ $book->genre->name }}</td>
                     <td class="px-4 py-3">{{ $book->isbn }}</td>
                     <td class="px-4 py-3">{{ $book->publication_year }}</td>
                 </tr>

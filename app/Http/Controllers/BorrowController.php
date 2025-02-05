@@ -10,7 +10,7 @@ class BorrowController extends Controller
 {
     public function index(){
         
-        $borrows = Borrow::all();
+        $borrows = Borrow::with(['book', 'user'])->get();
         return view('borrows.index', compact('borrows'));
     }
 }

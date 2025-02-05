@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Book;
 use App\Models\Genre;
+use App\Models\Borrow;
 
 class DatabaseSeeder extends Seeder
 {
@@ -28,6 +29,8 @@ class DatabaseSeeder extends Seeder
        ]);
 
         $genres = Genre::factory(5)->create();
-        Book::factory(20)->create();
+        Book::factory(10)->create();
+        Borrow::factory(10)->create();
+        
     }
 }
