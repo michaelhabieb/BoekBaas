@@ -52,6 +52,9 @@
                     Log in
                 </button>
             </div>
+            <a class="text-xs text-gray-600 hover:text-green-700 mt-2" href="{{ route('register') }}">
+                Nog geen account? <span class="font-semibold">Registreer hier</span>
+            </a>
         </form>
     </div>
 </x-guest-layout>
